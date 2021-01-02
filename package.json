@@ -1,0 +1,30 @@
+{
+  "name": "testcafe-devexpress-example",
+  "version": "1.0.0",
+  "description": "TestCafe DevExpress example tests",
+  "main": "",
+  "scripts": {
+    "test:chrome": "testcafe"
+  },
+  "repository": "git@github.com:beemi/testcafe-devexpress-example.git",
+  "author": {
+    "name": "Beemi Raja",
+    "email": "beemi.raja@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "testing",
+    "testcafe",
+    "ui",
+    "dom",
+    "integration",
+    "functional",
+    "end-to-end",
+    "e2e",
+    "Techical test"
+  ],
+  "dependencies": {
+    "@testing-library/testcafe": "^4.3.1",
+    "testcafe": "^1.10.1"
+  }
+}

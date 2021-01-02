@@ -1,0 +1,12 @@
+{
+  "browsers": "chrome",
+  "src": "testcafe/integration/*.js",
+  "debugMode": false,
+  "skipJsErrors": true,
+  "skipUncaughtErrors": true,
+  "clientScripts": [
+    {
+      "module": "@testing-library/dom/dist/@testing-library/dom.umd.js"
+    }
+  ]
+}
