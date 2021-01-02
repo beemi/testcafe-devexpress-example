@@ -1,9 +1,14 @@
 import {screen} from '@testing-library/testcafe'
+import {constants} from "../utils/constants";
 
-fixture`Getting Started`
+fixture`DevExpess home page`
+    .meta("testID", "JIRA-100")
+    .meta({author: "Raj Beemi", creationDate: "25/12/2020"})
+    .meta({severity: "critical"})
+    .meta({smokeTest: true})
     .page`https://devexpress.github.io/testcafe/example/`;
 
-test("Simple test", async t => {
+test("Enter developer name and validate thank you", async t => {
 
     // Name
     await t
@@ -21,5 +26,5 @@ test("Simple test", async t => {
 
     // Header
     await t
-        .expect(screen.getByTestId("thank-you-header").innerText).contains('Thank you')
+        .expect(screen.getByTestId("thank-you-header").innerText).contains(constants.THANK_YOU)
 })

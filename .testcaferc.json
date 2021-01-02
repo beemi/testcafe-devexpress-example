@@ -1,6 +1,6 @@
 {
   "browsers": "chrome",
-  "src": "testcafe/integration/*.js",
+  "src": ["testcafe/integration/*.js","testcafe/utils/*.js"],
   "debugMode": false,
   "skipJsErrors": true,
   "skipUncaughtErrors": true,

@@ -4,7 +4,7 @@
   "description": "TestCafe DevExpress example tests",
   "main": "",
   "scripts": {
-    "test:chrome": "testcafe"
+    "test:chrome": "testcafe chrome testcafe/integration/*.test.js --assertion-timeout 10000 --disable-page-caching --reporter spec,html:reports/testcafe/index.html"
   },
   "repository": "git@github.com:beemi/testcafe-devexpress-example.git",
   "author": {
@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "@testing-library/testcafe": "^4.3.1",
-    "testcafe": "^1.10.1"
+    "testcafe": "^1.10.1",
+    "testcafe-reporter-html": "^1.4.6"
   }
 }
