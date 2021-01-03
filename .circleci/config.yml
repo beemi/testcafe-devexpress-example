@@ -15,7 +15,7 @@ jobs:
       - run:
           command: make headlessTest
       - store_test_results:
-          path: ~/project/reports/testcafe/index.html
+          path: /tmp/test-results
 workflows:
   e2e-test:
     jobs:

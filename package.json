@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test:chrome": "testcafe $NODE_DEBUG_OPTION chrome testcafe/integration/*.test.js --assertion-timeout 10000 --disable-page-caching --reporter spec,html:reports/testcafe/index.html",
-    "test:chrome:headless": "testcafe $NODE_DEBUG_OPTION chrome:headless testcafe/integration/*.test.js --assertion-timeout 10000 --disable-page-caching --reporter spec,html:reports/testcafe/index.html"
+    "test:chrome:headless": "testcafe $NODE_DEBUG_OPTION chrome:headless testcafe/integration/*.test.js --assertion-timeout 10000 --disable-page-caching --reporter spec,html:/tmp/test-results/testcafe/index.html"
   },
   "repository": "git@github.com:beemi/testcafe-devexpress-example.git",
   "author": {
