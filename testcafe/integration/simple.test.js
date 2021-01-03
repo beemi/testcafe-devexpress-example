@@ -2,12 +2,14 @@ import {screen} from '@testing-library/testcafe';
 import {constants} from "../utils/constants";
 import faker from 'faker';
 
-fixture`DevExpess home page`
+require('dotenv').config();
+
+fixture ("DevExpess home page")
     .meta("testID", "JIRA-100")
     .meta({author: "Raj Beemi", creationDate: "25/12/2020"})
     .meta({severity: "critical"})
     .meta({smokeTest: true})
-    .page`https://devexpress.github.io/testcafe/example/`;
+    .page (process.env.BASE_URL)
 
 test("Enter developer name and validate thank you", async t => {
 
