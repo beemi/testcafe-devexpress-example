@@ -1,5 +1,6 @@
-import {screen} from '@testing-library/testcafe'
+import {screen} from '@testing-library/testcafe';
 import {constants} from "../utils/constants";
+import faker from 'faker';
 
 fixture`DevExpess home page`
     .meta("testID", "JIRA-100")
@@ -10,11 +11,13 @@ fixture`DevExpess home page`
 
 test("Enter developer name and validate thank you", async t => {
 
+    const developerName = faker.name.firstName({gender: "male"});
     // Name
     await t
         .setNativeDialogHandler(() => true)
-        .typeText(screen.getByTestId("name-input"), "RAJ BEEMI")
+        .typeText(screen.getByTestId("name-input"), developerName)
         .click(screen.getByTestId("populate-button"));
+    console.log("Enter developer name as: " + developerName);
 
     // Feature checkbox
     await t
