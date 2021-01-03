@@ -24,7 +24,7 @@ test("Enter developer name and validate thank you", async t => {
     await t
         .setNativeDialogHandler(() => true)
         .typeText(developerInputId, developerName)
-        .expect(developerInputId.value).contains(developerName)
+        .expect(developerInputId.value).contains(developerName,'Developer name should be'+developerName)
         .click(screen.getByTestId("populate-button"));
     console.log("Enter developer name as: " + developerName);
     console.log("Page URL: " + await getPageURL());
