@@ -20,9 +20,11 @@ test("Enter developer name and validate thank you", async t => {
     // Get Page title
     const getPageTitle = ClientFunction(() => document.title);
     // Name
+    let developerInputId = screen.getByTestId("name-input");
     await t
         .setNativeDialogHandler(() => true)
-        .typeText(screen.getByTestId("name-input"), developerName)
+        .typeText(developerInputId, developerName)
+        .expect(developerInputId.value).contains(developerName)
         .click(screen.getByTestId("populate-button"));
     console.log("Enter developer name as: " + developerName);
     console.log("Page URL: " + await getPageURL());
