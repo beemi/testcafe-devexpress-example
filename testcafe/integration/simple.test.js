@@ -17,6 +17,8 @@ test("Enter developer name and validate thank you", async t => {
     const developerName = faker.name.firstName({gender: "male"});
     // Get the Page URL
     const getPageURL = ClientFunction(() => window.location.href);
+    // Get Page title
+    const getPageTitle = ClientFunction(() => document.title);
     // Name
     await t
         .setNativeDialogHandler(() => true)
@@ -24,9 +26,11 @@ test("Enter developer name and validate thank you", async t => {
         .click(screen.getByTestId("populate-button"));
     console.log("Enter developer name as: " + developerName);
     console.log("Page URL: " + await getPageURL());
+    console.log("Page Title: " + await getPageTitle());
 
     await t
         .expect(getPageURL()).contains("/testcafe/example/")
+        .expect(getPageTitle()).eql("TestCafe Example Page")
 
     // Feature checkbox
     await t
@@ -40,5 +44,7 @@ test("Enter developer name and validate thank you", async t => {
     await t
         .expect(screen.getByTestId("thank-you-header").innerText).contains(constants.THANK_YOU)
         .expect(getPageURL()).contains("/testcafe/example/thank-you.html")
+        .expect(getPageTitle()).eql("Thank you!");
     console.log("Page URL after Thank you: " + await getPageURL());
+    console.log("Page Title: " + await getPageTitle());
 })
