@@ -11,7 +11,7 @@ jobs:
       - browser-tools/install-browser-tools
       - node/install-packages
       - run:
-          command: yarn install
+          command: npm install
       - run:
           command: make headlessTest
       - store_test_results:

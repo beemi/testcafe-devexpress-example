@@ -1,5 +1,5 @@
 test:
-	@yarn run test:chrome
+	@npm run test:chrome
 
 headlessTest:
-	@yarn run test:chrome:headless
+	@npm run test:chrome:headless
