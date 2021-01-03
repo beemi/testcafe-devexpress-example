@@ -10,7 +10,7 @@ fixture("DevExpess home page")
     .meta({author: "Raj Beemi", creationDate: "25/12/2020"})
     .meta({severity: "critical"})
     .meta({smokeTest: true})
-    .page(process.env.BASE_URL)
+    .page(process.env.DEV_EXPRESS_BASE_URL)
 
 test("Enter developer name and validate thank you", async t => {
 
