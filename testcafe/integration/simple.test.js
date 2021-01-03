@@ -36,6 +36,14 @@ test("Enter developer name and validate thank you", async t => {
     await t
         .click(screen.getByTestId("remote-testing-checkbox"))
 
+    // Select Testcafe TestCafe interface do you use as Both
+    const dropDownButton = screen.getByTestId("preferred-interface-select");
+    const bothOption = dropDownButton.find('option');
+
+    await t
+        .click(dropDownButton)
+        .click(bothOption.withText("Both"));
+
     // Submit
     await t
         .click(screen.getByTestId("submit-button"))
